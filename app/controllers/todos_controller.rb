@@ -1,8 +1,19 @@
-class TodosController< ApplicationController
-    def index 
-    end
+        class TodosController< ApplicationController
+        def index 
+            @Code_word= "#{params[:code]} #{params[:word]}"
+        end
     
-    def show 
+        def show 
+        id =params[:id]
+        
+        if id=='1'
+            @todo = {
+            id:id,
+            name:'Do homework',
+            duration:60
+            }
+            elsif id=='2'
+            
         @todo =
         {
             id: params[:id],
@@ -13,7 +24,9 @@ class TodosController< ApplicationController
             
             duration:10
         }
-            
+    else
+        @todo={} 
+        end 
+        end
+        end
         
-    end 
-end
