@@ -1,4 +1,4 @@
-        class TodosController< ApplicationController
+class TodosController< ApplicationController
         def index 
             @Code_word= "#{params[:code]} #{params[:word]}"
         end
@@ -20,4 +20,16 @@
             redirect_to "/todos/#{todo.id}"
         end
         
-        end 
+        def update
+            todo=Todo.find(params[:id])
+            todo.update(
+                name: params[:name],
+            description: params[:description],
+            duration: params[:duration],
+            complete: params[:complete]
+                
+                )
+                redirect_to "/todos/#{todo.id}"
+                
+        end
+end 
