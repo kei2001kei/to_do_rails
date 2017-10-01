@@ -17,15 +17,26 @@
         
         <li><input type="checkbox"> <a href="https://www.facebook.com/">Accept bre's friend request</a></li>
         
-         <li><input type="checkbox"><input type="text"></li>
          
          
-        <button> +ADD</button>
+         
+        
          
     </ul>
     
 
     </div>
-    Code word <%=@Code_word%>
+    <form  action="/todos" method="POST">
+    <input type= "hidden" name="authenticity_token" value= "<%= form_authenticity_token %>"
+    <input_type="text" name="description"/>
+    name: <input type="text" name="name"/>
+    description: <input type="text" name="description"/>
+    Estimated time: <input type ="number" name="duration"
+    completed <input type="checkbox" name="complete"/>, 
+    <input type="submit"/>
+    
+    
+    </form>
+    
     
          
